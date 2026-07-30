@@ -124,7 +124,7 @@ This project is still a work in progress, and it's helping me actually understan
 ## ⚡ How to Run
 
 ```bash
-git clone https://github.com/your-username/lost-and-found-portal.git
+git clone https://github.com/gaurv-dev/Lost-Found-Portal.git
 cd lost-and-found-portal
 
 cd server && npm install && npm run dev
