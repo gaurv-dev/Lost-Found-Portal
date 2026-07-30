@@ -88,7 +88,6 @@ User → React Frontend → Express REST API → MongoDB
 **Data Model**
 ```
 User                Item                     Claim
-----                ----                     -----
 name                title                    item      → ref: Item
 email               category                 claimedBy → ref: User
 password (hashed)   type: lost/found         message
