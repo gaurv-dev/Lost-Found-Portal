@@ -137,7 +137,7 @@ Add a `.env` file in `server/` with your MongoDB URI and JWT secret before runni
 
 ## 📄 License
 
-Released under the MIT License — free to use for learning and academic reference.
+This project was built solely for academic and learning purposes as part of a college submission.
 
 ---
 
