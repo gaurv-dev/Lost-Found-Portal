@@ -37,8 +37,6 @@ The result — items sit unclaimed not because no one found them, but because th
 | Manual item posting & search | Automated image-based matching |
 | Web-based access | Native mobile app |
 
-*(Architecture is written to allow these later — see Future Improvements.)*
-
 ---
 
 ## 👨‍💻 Developer
@@ -86,15 +84,13 @@ User → React Frontend → Express REST API → MongoDB
 ```
 
 **Data Model**
-```
-User                Item                     Claim
-name                title                    item      → ref: Item
-email               category                 claimedBy → ref: User
-password (hashed)   type: lost/found         message
-                     location, date           status
-                     postedBy → ref: User
-                     status
-```
+
+| User | Item | Claim |
+|---|---|---|
+| name | title, category | item → ref Item |
+| email | type: lost/found | claimedBy → ref User |
+| password (hashed) | location, date | message, status |
+| | postedBy → ref User, status | |
 
 **Folder Structure**
 ```
