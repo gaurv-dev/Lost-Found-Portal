@@ -125,7 +125,7 @@ This project is still a work in progress, and it's helping me actually understan
 
 ```bash
 git clone https://github.com/gaurv-dev/Lost-Found-Portal.git
-cd lost-and-found-portal
+cd Lost-Found-Portal
 
 cd server && npm install && npm run dev
 cd client && npm install && npm run dev
