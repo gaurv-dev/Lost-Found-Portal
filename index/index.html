@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlight Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <div class="logo-icon">&#9733;</div>
+            <div>
+                <span class="logo-text">Starlight</span>
+                <span class="logo-sub">Lost & Found</span>
+            </div>
+        </a>
+        <div class="header-actions">
+            <div class="search-bar">
+                <span class="search-icon">&#128269;</span>
+                <input type="text" id="searchInput" placeholder="Search items..." oninput="debouncedSearch()">
+            </div>
+            <button class="btn btn-primary btn-sm" onclick="openReportModal()">+ Report</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <div class="hero-badge">
+            <span>&#9733;</span> Your Community Lost & Found
+        </div>
+        <h1>Never lose hope,<br>everything can be found</h1>
+        <p>Report lost items, help others reunite with their belongings, and be part of a caring community powered by kindness.</p>
+        <div class="hero-actions">
+            <button class="btn btn-primary" onclick="openReportModal('lost')">
+                &#128204; Report Lost Item
+            </button>
+            <button class="btn btn-accent" onclick="openReportModal('found')">
+                &#127775; Report Found Item
+            </button>
+        </div>
+    </section>
+
+    <div class="stats" id="statsContainer">
+        <div class="stat-card total">
+            <div class="stat-number" id="statTotal">0</div>
+            <div class="stat-label">Total Reports</div>
+        </div>
+        <div class="stat-card lost">
+            <div class="stat-number" id="statLost">0</div>
+            <div class="stat-label">Lost Items</div>
+        </div>
+        <div class="stat-card found">
+            <div class="stat-number" id="statFound">0</div>
+            <div class="stat-label">Found Items</div>
+        </div>
+        <div class="stat-card resolved">
+            <div class="stat-number" id="statResolved">0</div>
+            <div class="stat-label">Resolved</div>
+        </div>
+    </div>
+
+    <div class="filters">
+        <div class="filter-group">
+            <label>Type:</label>
+            <select class="filter-select" id="filterType" onchange="loadItems()">
+                <option value="">All Types</option>
+                <option value="lost">Lost</option>
+                <option value="found">Found</option>
+            </select>
+        </div>
+        <div class="filter-divider"></div>
+        <div class="filter-group">
+            <label>Category:</label>
+            <select class="filter-select" id="filterCategory" onchange="loadItems()">
+                <option value="">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Books">Books</option>
+                <option value="Documents">Documents</option>
+                <option value="Keys">Keys</option>
+                <option value="Bags">Bags</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="filter-divider"></div>
+        <div class="filter-group">
+            <label>Status:</label>
+            <select class="filter-select" id="filterStatus" onchange="loadItems()">
+                <option value="">All Status</option>
+                <option value="open">Open</option>
+                <option value="resolved">Resolved</option>
+            </select>
+        </div>
+        <div style="margin-left:auto;">
+            <button class="btn btn-ghost btn-sm" onclick="clearFilters()">&#8634; Reset</button>
+        </div>
+    </div>
+
+    <div class="items-grid" id="itemsGrid">
+        <div class="loading">
+            <div class="spinner"></div>
+            <p style="color:var(--text-muted);font-size:14px;">Loading items...</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>Made with <span class="heart">&#10084;</span> &nbsp;&#9733;&nbsp; Starlight Lost & Found Portal</p>
+    </div>
+</footer>
+
+<div class="modal-overlay" id="reportModal">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 id="modalTitle">Report Item</h2>
+            <button class="modal-close" onclick="closeReportModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="reportForm" onsubmit="submitReport(event)">
+                <input type="hidden" id="formType" name="type" value="lost">
+
+                <div class="form-group">
+                    <label>Title <span class="required">*</span></label>
+                    <input class="form-input" type="text" id="formTitle" placeholder="e.g. Black Backpack" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Category <span class="required">*</span></label>
+                        <select class="form-select" id="formCategory" required>
+                            <option value="">Select category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Books">Books</option>
+                            <option value="Documents">Documents</option>
+                            <option value="Keys">Keys</option>
+                            <option value="Bags">Bags</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Type <span class="required">*</span></label>
+                        <select class="form-select" id="formTypeSelect" onchange="updateFormType(this.value)" required>
+                            <option value="lost">Lost Item</option>
+                            <option value="found">Found Item</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Description <span class="required">*</span></label>
+                    <textarea class="form-textarea" id="formDescription" placeholder="Describe the item in detail..." required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Location <span class="required">*</span></label>
+                        <input class="form-input" type="text" id="formLocation" placeholder="e.g. Library, 2nd floor" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date <span class="required">*</span></label>
+                        <input class="form-input" type="date" id="formDate" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name <span class="required">*</span></label>
+                        <input class="form-input" type="text" id="formName" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input class="form-input" type="email" id="formEmail" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone (optional)</label>
+                    <input class="form-input" type="tel" id="formPhone" placeholder="+1 234 567 890">
+                </div>
+
+                <div class="form-group">
+                    <label>Image (optional)</label>
+                    <div class="image-upload-area" id="imageUploadArea">
+                        <div class="upload-icon">&#128247;</div>
+                        <div class="upload-text">Drop an image here or <strong>browse</strong></div>
+                        <input type="file" id="formImage" accept="image/jpeg,image/png,image/gif,image/webp" onchange="previewImage(event)">
+                    </div>
+                    <img class="image-preview" id="imagePreview">
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeReportModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">&#127775; Submit Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="detailModal">
+    <div class="detail-modal" id="detailContent">
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
