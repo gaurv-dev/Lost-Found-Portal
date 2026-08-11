@@ -72,7 +72,12 @@
 .fc-1{top:8%; left:0%; animation-delay:0s;}
 .fc-2{bottom:14%; right:-2%; animation-delay:1.2s;}
 .fc-3{top:46%; right:8%; animation-delay:2.4s;}
-@keyframes float{0%,100%{transform:translateY(0px);}50%{transform:translateY(-14px);}}
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);}
+        
+        50%{transform:translateY(-14px);}
+    }
 
 @media (prefers-reduced-motion:reduce){
   .beacon-sweep,.float-card{animation:none;}
