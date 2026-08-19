@@ -19,7 +19,7 @@ The result — items sit unclaimed not because no one found them, but because th
 
 ---
 
-## 🎯 Objectives
+## 🎯 Objectives 
 
 - Centralize lost & found reporting into one platform
 - Make listings searchable and filterable (category, location, date)
@@ -62,7 +62,6 @@ A personal space to track your own posts, mark items as resolved once returned, 
 ---
 
 ## 🧰 Tech Stack
-
 | Layer | Technology | Reason for Choosing |
 |---|---|---|
 | Frontend | React.js, React Router, Axios | Reusable components, smooth client-side navigation |
