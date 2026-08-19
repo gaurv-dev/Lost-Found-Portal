@@ -1,4 +1,4 @@
-# 🔍 Lost & Found Portal
+# 🔍 Lost & Found Portal 
 
 > *"Every semester, someone loses their ID card, headphones, or a water bottle — and it just disappears into a lost-property drawer nobody checks. This project is my attempt to fix that."*
 
