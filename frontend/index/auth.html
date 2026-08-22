@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In or Register - Starlight Lost and Found</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">Starlight</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="post.html">Report an item</a>
+    </nav>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card">
+
+      <!-- Tabs to switch between Log In and Register -->
+      <div class="auth-tabs" id="auth-tabs">
+        <button type="button" class="auth-tab active" data-tab="login">Log In</button>
+        <button type="button" class="auth-tab" data-tab="register">Register</button>
+      </div>
+
+      <!-- ============ LOG IN FORM ============ -->
+      <form class="auth-form" id="login-form">
+        <h1>Welcome back</h1>
+        <p class="auth-sub">Log in to report items or check your claims.</p>
+
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" placeholder="you@college.edu" required>
+        </div>
+
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" placeholder="Enter your password" required minlength="6">
+        </div>
+
+        <p class="field-error" id="login-error" hidden>Please enter a valid email and a password of at least 6 characters.</p>
+
+        <button type="submit" class="btn btn-gold btn-full-width">Log In</button>
+      </form>
+
+      <!-- ============ REGISTER FORM ============ -->
+      <form class="auth-form" id="register-form" hidden>
+        <h1>Create your account</h1>
+        <p class="auth-sub">Register to start reporting lost or found items.</p>
+
+        <div class="field">
+          <label for="register-name">Full name</label>
+          <input type="text" id="register-name" name="name" placeholder="Your full name" required>
+        </div>
+
+        <div class="field">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" name="email" placeholder="you@college.edu" required>
+        </div>
+
+        <div class="field">
+          <label for="register-password">Password</label>
+          <input type="password" id="register-password" name="password" placeholder="At least 6 characters" required minlength="6">
+        </div>
+
+        <div class="field">
+          <label for="register-confirm-password">Confirm password</label>
+          <input type="password" id="register-confirm-password" name="confirmPassword" placeholder="Re-enter your password" required minlength="6">
+        </div>
+
+        <p class="field-error" id="register-error" hidden></p>
+
+        <button type="submit" class="btn btn-gold btn-full-width">Create Account</button>
+      </form>
+
+      <!-- Shown after a successful login or registration -->
+      <div class="auth-success" id="auth-success" hidden>
+        <h2 id="success-heading">You're logged in</h2>
+        <p id="success-text">Redirecting you to the homepage.</p>
+        <a href="index.html" class="btn btn-gold">Go to homepage</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Starlight Lost and Found. Built for academic purposes.</p>
+  </footer>
+
+  <script src="auth.js"></script>
+</body>
+</html>
