@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Items - Starlight Lost and Found</title>
+
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="browse.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">Starlight</a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="browse.html" class="active">Browse</a>
+      <a href="post.html">Report an item</a>
+      <a href="dashboard.html">My activity</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">Log in</a>
+      <a href="post.html" class="btn btn-gold">Report item</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-heading">
+      <h1>Browse Lost &amp; Found Items</h1>
+      <p>Search everything reported as lost or found on campus.</p>
+    </section>
+
+    <section class="filter-bar">
+
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search by item name, brand or location">
+      </div>
+
+      <div class="status-buttons" id="status-buttons">
+        <button class="status-btn active" data-status="all">All</button>
+        <button class="status-btn" data-status="lost">Lost</button>
+        <button class="status-btn" data-status="found">Found</button>
+      </div>
+
+      <select id="sort-select">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="az">Name A-Z</option>
+      </select>
+
+      <div class="category-buttons" id="category-buttons">
+        <button class="category-btn active" data-category="all">All categories</button>
+        <button class="category-btn" data-category="electronics">Electronics</button>
+        <button class="category-btn" data-category="accessories">Accessories</button>
+        <button class="category-btn" data-category="bags">Bags</button>
+        <button class="category-btn" data-category="documents">Documents</button>
+        <button class="category-btn" data-category="keys">Keys</button>
+        <button class="category-btn" data-category="clothing">Clothing</button>
+        <button class="category-btn" data-category="other">Other</button>
+      </div>
+
+    </section>
+
+ 
+    <p id="result-count"></p>
+
+    <section class="item-grid" id="item-grid"></section>
+
+    <div class="no-results" id="no-results" hidden>
+      <h3>No items match your search.</h3>
+      <p>Try different keywords or clear your filters.</p>
+      <button class="btn btn-gold" id="clear-filters-btn">Clear filters</button>
+    </div>
+
+    <div class="load-more-wrap">
+      <button class="btn btn-outline" id="load-more-btn">Load more items</button>
+    </div>
+
+  </main>
+
+  <div class="modal-background" id="modal-background">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+
+      <div class="modal-image" id="modal-image"></div>
+
+      <div class="modal-details">
+        <span class="status-label" id="modal-status-label">LOST</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-meta"></p>
+        <p id="modal-description"></p>
+        <hr>
+        <p id="modal-poster"></p>
+        <button class="btn btn-gold btn-full-width">Claim this item</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Starlight Lost and Found. Built for academic purposes.</p>
+  </footer>
+
+  <script src="items.js"></script>
+  <script src="browse.js"></script>
+</body>
+</html>
