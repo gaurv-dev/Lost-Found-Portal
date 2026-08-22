@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report an Item - Starlight Lost and Found</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="post.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">Starlight</a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="post.html" class="active">Report an item</a>
+      <a href="dashboard.html">My activity</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost">Log in</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-heading">
+      <span class="eyebrow">File a new entry</span>
+      <h1>Report a Lost or Found Item</h1>
+      <p>Fill in the details below. The more specific you are, the easier it is for someone to recognize their item.</p>
+    </section>
+
+    <form class="report-form" id="report-form">
+
+      <!-- Step 1: is this item lost or found -->
+      <div class="form-section">
+        <label class="section-label">What are you reporting?</label>
+        <div class="type-buttons" id="type-buttons">
+          <button type="button" class="type-btn active" data-type="lost">
+            I lost something
+          </button>
+          <button type="button" class="type-btn" data-type="found">
+            I found something
+          </button>
+        </div>
+
+        <input type="hidden" id="item-status" name="status" value="lost">
+      </div>
+
+      <div class="form-section">
+        <label class="section-label">Item details</label>
+
+        <div class="field">
+          <label for="item-title">Item name</label>
+          <input type="text" id="item-title" name="title" placeholder="e.g. Black Wireless Earbuds" required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="item-category">Category</label>
+            <select id="item-category" name="category" required>
+              <option value="" disabled selected>Select a category</option>
+              <option value="electronics">Electronics</option>
+              <option value="accessories">Accessories</option>
+              <option value="bags">Bags</option>
+              <option value="documents">Documents &amp; cards</option>
+              <option value="keys">Keys</option>
+              <option value="clothing">Clothing</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="item-date">Date</label>
+            <input type="date" id="item-date" name="date" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="item-location" id="location-label">Where did you lose it?</label>
+          <input type="text" id="item-location" name="location" placeholder="e.g. Library, 2nd Floor" required>
+        </div>
+
+        <div class="field">
+          <label for="item-description">Description</label>
+          <textarea id="item-description" name="description" rows="4" placeholder="Color, brand, any marks or stickers, anything that helps identify it" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="item-photo">Photo (optional)</label>
+          <input type="file" id="item-photo" name="photo" accept="image/*">
+          <p class="field-hint">A clear photo makes it much easier for someone to recognize their item.</p>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label class="section-label">Your contact details</label>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="reporter-name">Your name</label>
+            <input type="text" id="reporter-name" name="reporterName" placeholder="Full name" required>
+          </div>
+
+          <div class="field">
+            <label for="reporter-email">Email</label>
+            <input type="email" id="reporter-email" name="reporterEmail" placeholder="you@college.edu" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-gold btn-full-width">Submit report</button>
+        <p class="form-note">Your entry will appear on the Browse page once submitted.</p>
+      </div>
+
+    </form>
+
+    <section class="success-box" id="success-box" hidden>
+      <h2>Report submitted</h2>
+      <p>Your item has been added to the ledger. You can track it from your dashboard.</p>
+      <div class="success-actions">
+        <a href="browse.html" class="btn btn-gold">Browse all items</a>
+        <a href="dashboard.html" class="btn btn-ghost">Go to my activity</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Starlight Lost and Found. Built for academic purposes.</p>
+  </footer>
+
+  <script src="post.js"></script>
+</body>
+</html>
