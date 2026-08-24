@@ -284,9 +284,6 @@ main {
   font-weight: 600;
 }
 
-/* -----------------------------------------
-   Claim list (Claims I made / Claims received tabs)
------------------------------------------- */
 .claim-list {
   display: flex;
   flex-direction: column;
