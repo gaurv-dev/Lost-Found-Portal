@@ -1,14 +1,14 @@
 
 :root {
   --color-navy-dark: #0a1730;
-  --color-navy: #0f2140;
-  --color-navy-light: #16305a;
+  --color-blue: #346fd6;
+  --color--white: hsl(217, 9%, 72%);
   --color-gold: #e4b85c;
   --color-coral: #ff6e5c;
   --color-teal: #38b8a6;
   --color-text: #f3efe6;
   --color-muted: #93a4c2;
-  --color-border: rgba(243, 239, 230, 0.15);
+  --color-border: rgba(90, 106, 0, 0.1);
 
   --font-heading: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
