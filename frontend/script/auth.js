@@ -78,10 +78,6 @@ registerForm.addEventListener("submit", function (event) {
 });
 
 
-// ---------------------------------------------------------
-// Hides both forms and shows the success message with
-// a custom heading and description.
-// ---------------------------------------------------------
 function showSuccessMessage(heading, message) {
   loginForm.hidden = true;
   registerForm.hidden = true;
