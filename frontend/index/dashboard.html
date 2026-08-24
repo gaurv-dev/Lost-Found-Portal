@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Activity - Starlight Lost and Found</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">Starlight</a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="post.html">Report an item</a>
+      <a href="dashboard.html" class="active">My activity</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="post.html" class="btn btn-gold">Report item</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-heading">
+      <span class="eyebrow">Your account</span>
+      <h1>My Activity</h1>
+      <p>Everything you have reported, and every claim on your items, in one place.</p>
+    </section>
+
+    <!-- Quick numbers at the top, so the user gets a summary at a glance -->
+    <section class="summary-row" id="summary-row"></section>
+
+    <!-- Tabs to switch between the three lists below -->
+    <div class="dashboard-tabs" id="dashboard-tabs">
+      <button type="button" class="dashboard-tab active" data-tab="my-items">My reported items</button>
+      <button type="button" class="dashboard-tab" data-tab="claims-made">Claims I made</button>
+      <button type="button" class="dashboard-tab" data-tab="claims-received">Claims on my items</button>
+    </div>
+
+   
+    <section class="tab-panel" id="panel-my-items">
+      <div class="item-list" id="my-items-list"></div>
+      <p class="empty-message" id="my-items-empty" hidden>You haven't reported any items yet.</p>
+    </section>
+
+    <section class="tab-panel" id="panel-claims-made" hidden>
+      <div class="claim-list" id="claims-made-list"></div>
+      <p class="empty-message" id="claims-made-empty" hidden>You haven't claimed any items yet.</p>
+    </section>
+
+    <section class="tab-panel" id="panel-claims-received" hidden>
+      <div class="claim-list" id="claims-received-list"></div>
+      <p class="empty-message" id="claims-received-empty" hidden>No one has claimed your items yet.</p>
+    </section>
+
+  </main>
+  <div class="modal-background" id="confirm-modal-background">
+    <div class="confirm-modal">
+      <h3 id="confirm-modal-title">Are you sure?</h3>
+      <p id="confirm-modal-text"></p>
+      <div class="confirm-modal-actions">
+        <button type="button" class="btn btn-ghost" id="confirm-modal-cancel">Cancel</button>
+        <button type="button" class="btn btn-gold" id="confirm-modal-confirm">Yes, continue</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Starlight Lost and Found. Built for academic purposes.</p>
+  </footer>
+
+  <script src="dashboard-data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
