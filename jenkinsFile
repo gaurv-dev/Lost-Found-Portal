@@ -11,7 +11,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the frontend...'
-                // agar Maven/Java backend hai to:
                 // bat 'mvn clean compile'
             }
         }
