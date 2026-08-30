@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="..style/post.css">
+  <link rel="stylesheet" href="../style/post.css">
 </head>
 <body>
 
@@ -29,47 +30,6 @@
 
   <main>
 
-    <section class="page-heading">
-      <span class="eyebrow">File a new entry</span>
-      <h1>Report a Lost or Found Item</h1>
-      <p>Fill in the details below. The more specific you are, the easier it is for someone to recognize their item.</p>
-    </section>
-
-    <form class="report-form" id="report-form">
-
-      <div class="form-section">
-        <label class="section-label">What are you reporting?</label>
-        <div class="type-buttons" id="type-buttons">
-          <button type="button" class="type-btn active" data-type="lost">
-            I lost something
-          </button>
-          <button type="button" class="type-btn" data-type="found">
-            I found something
-          </button>
-        </div>
-
-        <input type="hidden" id="item-status" name="status" value="lost">
-      </div>
-
-      <div class="form-section">
-        <label class="section-label">Item details</label>
-
-        <div class="field">
-          <label for="item-title">Item name</label>
-          <input type="text" id="item-title" name="title" placeholder="e.g. Black Wireless Earbuds" required>
-        </div>
-
-        <div class="field-row">
-          <div class="field">
-            <label for="item-category">Category</label>
-            <select id="item-category" name="category" required>
-              <option value="" disabled selected>Select a category</option>
-              <option value="electronics">Electronics</option>
-              <option value="accessories">Accessories</option>
-              <option value="bags">Bags</option>
-              <option value="documents">Documents &amp; cards</option>
-              <option value="keys">Keys</option>
-              <option value="clothing">Clothing</option>
               <option value="other">Other</option>
             </select>
           </div>

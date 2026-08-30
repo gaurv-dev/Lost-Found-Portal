@@ -1,84 +1,101 @@
 
-.hero{
-    padding:96px 0 110px; position:relative; overflow:hidden;
-}
-.hero-grid{
-  display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center;
-}
-.hero-copy h1{
-  font-size:clamp(38px,5vw,58px); line-height:1.06; margin:22px 0 22px;
-}
-.hero-copy h1 em{
-  font-style:italic; color:var(--gold);
-}
-.hero-copy p{
-  font-size:17px; color:var(--paper-dim); max-width:460px; margin-bottom:34px; line-height:1.65;
-}
-.hero-actions{
-    display:flex; gap:14px; flex-wrap:wrap;
-}
-.hero-actions .btn{
-    padding:15px 28px; font-size:15px;
+.hero {
+    padding: 96px 0 110px;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.hero-trust{
-    display:flex; gap:28px; margin-top:40px; flex-wrap:wrap;
+.hero-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gold);
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    padding: 8px 14px;
+    margin-bottom: 18px;
 }
-.hero-trust div{font-family:var(--mono); font-size:12px; color:var(--paper-faint);}
-.hero-trust strong{display:block; font-family:var(--display); font-size:22px; color:var(--paper); font-weight:600;}
+
+.hero h1 {
+    max-width: 700px;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.06;
+    margin: 22px 0;
+    color: var(--paper);
+}
+
+.hero p {
+    font-size: 17px;
+    color: var(--paper-dim);
+    max-width: 600px;
+    margin-bottom: 34px;
+    line-height: 1.65;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-actions .btn {
+    padding: 15px 28px;
+    font-size: 15px;
+}
 
 
-.hero-visual{
-    position:relative; height:460px; display:flex; align-items:center; justify-content:center;
-}
-.beacon-wrap{
-  position:relative; width:340px; height:340px;
-}
-.beacon-sweep{
-  position:absolute; top:50%; left:50%; width:600px; height:600px;
-  margin:-300px 0 0 -300px;
-  background:conic-gradient(from 0deg, transparent 0deg, rgba(244,201,93,0.22) 18deg, transparent 46deg);
-  border-radius:50%;
-  animation:sweep 6s linear infinite;
-}
-@keyframes sweep{
-    to{transform:rotate(360deg);}
-}
-.beacon-core{
-  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-  width:180px; height:180px; border-radius:50%;
-  background:radial-gradient(circle at 35% 30%, #FFE9AE, var(--gold) 55%, var(--gold-dim) 100%);
-  box-shadow:0 0 90px rgba(244,201,93,0.55), 0 0 200px rgba(244,201,93,0.25);
-  display:flex; align-items:center; justify-content:center;
-  font-size:56px;
-}
-.orbit-ring{
-  position:absolute; top:50%; left:50%; border:1px dashed rgba(246,243,234,0.15);
-  border-radius:50%; transform:translate(-50%,-50%);
-}
-.orbit-1{width:280px; height:280px;}
-.orbit-2{width:400px; height:400px;}
+.hero::before {
+    content: "";
+    position: absolute;
 
-.float-card{
-  position:absolute; background:var(--navy-800); border:1px solid var(--line);
-  border-radius:var(--radius-md); padding:12px 16px; display:flex; align-items:center; gap:10px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.4);
-  font-size:13px; font-weight:600; animation:float 5s ease-in-out infinite;
-}
-.float-card .ic{
-    font-size:18px;
+    width: 500px;
+    height: 500px;
 
+    top: -200px;
+    right: -150px;
+
+    background: radial-gradient(
+        circle,
+        rgba(244, 201, 93, 0.12),
+        transparent 70%
+    );
+
+    pointer-events: none;
 }
-.fc-1{top:8%; left:0%; animation-delay:0s;}
-.fc-2{bottom:14%; right:-2%; animation-delay:1.2s;}
-.fc-3{top:46%; right:8%; animation-delay:2.4s;}
-@keyframes float{
-    0%,100%{
-        transform:translateY(0px);}
-        
-        50%{transform:translateY(-14px);}
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 65px 0 70px;
     }
 
-@media (prefers-reduced-motion:reduce){
-  .beacon-sweep,.float-card{animation:none;}
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .hero {
+        padding: 50px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
 }
