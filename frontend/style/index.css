@@ -1,3 +1,4 @@
+
 :root {
   --color-navy-dark: #0a1730;
   --color-navy: #0f2140;
@@ -8,7 +9,7 @@
   --color-text: #f3efe6;
   --color-muted: #93a4c2;
   --color-border: rgba(243, 239, 230, 0.15);
- 
+
   --font-heading: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
 }
@@ -38,6 +39,11 @@ a {
 button {
   cursor: pointer;
   font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  margin: 0;
 }
 
 .container {
@@ -93,6 +99,7 @@ button {
   padding: 9px 16px;
   font-size: 0.85rem;
 }
+
 header {
   position: sticky;
   top: 0;
@@ -199,6 +206,7 @@ header {
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.2;
   margin: 0 0 18px;
+  color: var(--color-text);
 }
 
 .hero p {
@@ -214,7 +222,6 @@ header {
   gap: 14px;
   flex-wrap: wrap;
 }
-
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -281,18 +288,92 @@ header {
     transform: rotate(360deg);
   }
 }
-
 .item-card {
   background-color: var(--color-navy);
   border: 1px solid var(--color-border);
   border-radius: 14px;
   overflow: hidden;
+  padding: 20px;
+  min-width: 0;
 }
 
 .item-card:hover {
   border-color: var(--color-gold);
 }
 
+.item-card h3,
+.item-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  margin: 10px 0 6px;
+}
+
+.item-card p {
+  color: var(--color-muted);
+  font-size: 0.86rem;
+  margin: 0 0 6px;
+}
+
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: 50px 5% 24px;
+  margin-top: 40px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 30px;
+  max-width: 1150px;
+  margin: 0 auto 30px;
+}
+
+.footer-top h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  margin: 0 0 10px;
+}
+
+.footer-top h4 {
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+  color: var(--color-text);
+}
+
+.footer-top > div > p {
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.footer-top ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-top ul li {
+  margin-bottom: 10px;
+}
+
+.footer-top ul li a {
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
+.footer-top ul li a:hover {
+  color: var(--color-gold);
+}
+
+.footer .copyright {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
 @media (max-width: 850px) {
   .search-bar input {
     width: 120px;
@@ -302,6 +383,10 @@ header {
 @media (max-width: 700px) {
   .stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -1,7 +1,7 @@
 <header>
     <div class="container header-inner">
 
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
 
             <div class="logo-icon">★</div>
 
@@ -10,6 +10,14 @@
                 <span class="logo-sub">Lost & Found</span>
             </div>
         </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse</a>
+            <a href="post.html">Report an item</a>
+            <a href="dashboard.html">My activity</a>
+        </nav>
+
         <div class="header-actions">
 
             <div class="search-bar">
@@ -21,6 +29,7 @@
                        placeholder="Search items..."
                        oninput="debouncedSearch()">
             </div>
+            <a href="auth.html" class="btn btn-primary btn-sm">Log In</a>
             <button
                 class="btn btn-primary btn-sm"
                 onclick="openReportModal()">
