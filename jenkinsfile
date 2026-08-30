@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/gaurv-dev/Lost-Found-Portal.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the frontend...'
+                // agar Maven/Java backend hai to:
+                // bat 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // bat 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                echo 'Packaging application...'
+                // bat 'mvn package'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'SUCCESS: Build pipeline complete.'
+        }
+        failure {
+            echo 'FAILURE: Check the logs for the failed stage.'
+        }
+    }
+}
