@@ -13,7 +13,6 @@
   --font-heading: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -51,6 +50,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   padding: 0 5%;
 }
+
 .stars {
   position: fixed;
   inset: 0;
@@ -104,7 +104,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: var(--color-navy);
+  background-color: #e4e6eb;
   border-bottom: 2px solid var(--color-gold);
 }
 
@@ -133,18 +133,18 @@ header {
   font-size: 1.1rem;
 }
 
-.logo-text {
+header .logo-text {
   display: block;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 1.15rem;
-  color: var(--color-text);
+  color: #1a2440;
 }
 
-.logo-sub {
+header .logo-sub {
   display: block;
   font-size: 0.72rem;
-  color: var(--color-muted);
+  color: #5a6478;
 }
 
 .header-actions {
@@ -152,6 +152,7 @@ header {
   align-items: center;
   gap: 14px;
 }
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -159,21 +160,21 @@ header {
 }
 
 .nav-links a {
-  color: var(--color-muted);
+  color: #3a4460;
   font-size: 0.88rem;
   font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: var(--color-text);
+  color: #1a2440;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--color-navy);
-  border: 1px solid var(--color-border);
+  background-color: #ffffff;
+  border: 1px solid #cdd1db;
   border-radius: 999px;
   padding: 9px 16px;
 }
@@ -182,19 +183,20 @@ header {
   border: none;
   background: transparent;
   outline: none;
-  color: var(--color-text);
+  color: #1a2440;
   font-size: 0.88rem;
   width: 180px;
 }
 
 .search-bar input::placeholder {
-  color: var(--color-muted);
+  color: #8b93a8;
 }
 
 .search-icon {
   font-size: 0.9rem;
   opacity: 0.7;
 }
+
 .hero {
   text-align: center;
   padding: 70px 0 50px;
@@ -236,9 +238,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* -----------------------------------------
-   Stats (stats.html)
------------------------------------------- */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -401,6 +400,7 @@ img.item-photo[src=""] {
   max-width: 1150px;
   margin: 0 auto 36px;
 }
+
 .footer-brand .footer-logo {
   display: flex;
   align-items: center;
@@ -481,6 +481,7 @@ img.item-photo[src=""] {
   margin: 0 auto;
   letter-spacing: 0.02em;
 }
+
 
 @media (max-width: 900px) {
   .nav-links {
