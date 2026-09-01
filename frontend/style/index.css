@@ -51,7 +51,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   padding: 0 5%;
 }
-
 .stars {
   position: fixed;
   inset: 0;
@@ -105,9 +104,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(10, 23, 48, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-navy);
+  border-bottom: 2px solid var(--color-gold);
 }
 
 .header-inner {
@@ -197,7 +195,6 @@ header {
   font-size: 0.9rem;
   opacity: 0.7;
 }
-
 .hero {
   text-align: center;
   padding: 70px 0 50px;
@@ -239,6 +236,9 @@ header {
   flex-wrap: wrap;
 }
 
+/* -----------------------------------------
+   Stats (stats.html)
+------------------------------------------ */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -387,48 +387,67 @@ img.item-photo[src=""] {
 }
 
 .footer {
-  background-color: var(--color-cream, #f3efe6);
-  color: var(--color-navy-dark);
+  background-color: #ffffff;
   border-top: 3px solid var(--color-gold);
-  padding: 56px 5% 26px;
+  padding: 60px 5% 26px;
   margin-top: 40px;
   position: relative;
-}
-.footer::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(228, 184, 92, 0.6), transparent);
 }
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 40px;
   max-width: 1150px;
-  margin: 0 auto 30px;
+  margin: 0 auto 36px;
+}
+.footer-brand .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 
-.footer-top h3 {
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  margin: 0 0 10px;
+.footer-brand .footer-logo .logo-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--color-gold);
   color: var(--color-navy-dark);
+  font-size: 1.1rem;
+}
+
+.footer-brand .footer-logo .logo-text {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1a2440;
+}
+
+.footer-brand .footer-logo .logo-sub {
+  display: block;
+  font-size: 0.72rem;
+  color: #6b7690;
+}
+
+.footer-brand p {
+  color: #5a6478;
+  font-size: 0.9rem;
+  margin: 0;
+  max-width: 260px;
+  line-height: 1.6;
 }
 
 .footer-top h4 {
-  font-size: 0.9rem;
-  margin: 0 0 14px;
-  color: var(--color-navy-dark);
-}
-
-.footer-top > div > p {
-  color: #5a6478;
-  font-size: 0.88rem;
-  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 18px;
+  color: #1a2440;
 }
 
 .footer-top ul {
@@ -438,26 +457,29 @@ img.item-photo[src=""] {
 }
 
 .footer-top ul li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .footer-top ul li a {
   color: #5a6478;
   font-size: 0.88rem;
+  transition: color 0.15s ease, padding-left 0.15s ease;
 }
 
 .footer-top ul li a:hover {
-  color: var(--color-navy);
+  color: var(--color-gold);
+  padding-left: 3px;
 }
 
 .footer .copyright {
   text-align: center;
   color: #5a6478;
   font-size: 0.8rem;
-  border-top: 1px solid rgba(10, 23, 48, 0.12);
-  padding-top: 20px;
+  border-top: 1px solid rgba(10, 23, 48, 0.1);
+  padding-top: 22px;
   max-width: 1150px;
   margin: 0 auto;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 900px) {
