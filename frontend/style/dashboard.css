@@ -48,27 +48,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 5%;
-  background-color: rgba(10, 23, 48, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 600;
-}
 
 .brand::before {
   content: "";
@@ -84,20 +63,30 @@ button:focus-visible {
   gap: 28px;
 }
 
-.nav-links a {
-  color: var(--color-muted);
-  font-size: 0.9rem;
-  font-weight: 500;
+.navbar{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 5%;
+  background:#ffffff;              
+  border-bottom:1px solid #e5e5e5;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--color-text);
-}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--font-display);
+  font-weight:600; font-size:1.25rem;
+  color:#0a1730;    
+}             
 
-/* -----------------------------------------
-   Buttons
------------------------------------------- */
+.nav-links a{
+  font-size:0.92rem;
+  color:#333;                     
+  font-weight:500;
+  padding-bottom:4px; border-bottom:2px solid transparent;
+  transition:color .2s ease, border-color .2s ease;
+}
+.nav-links a:hover{ color:#000; }
+.nav-links a.active{ color:#000; border-color:var(--gold); }
 .btn {
   display: inline-block;
   padding: 9px 18px;
