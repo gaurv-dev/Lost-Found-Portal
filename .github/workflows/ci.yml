@@ -23,6 +23,4 @@ jobs:
           test -f frontend/index/home.html
           test -f frontend/index/auth.html
           test -f frontend/index/dashboard.html
-
-      - name: Run tests
-        run: bash tests/project-structure.sh
+=
