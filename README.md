@@ -23,8 +23,7 @@ Lost & Found Portal is a full-stack web application designed to help campuses, o
 
 ## Running locally
 
-make install
-make run
+make install && make run
 
 ## Live URL
 
