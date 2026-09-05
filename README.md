@@ -1,149 +1,34 @@
-# 🔍 Lost & Found Portal  
+## Author
 
-> *"Every semester, someone loses their ID card, headphones, or a water bottle — and it just disappears into a lost-property drawer nobody checks. This project is my attempt to fix that."*
+| Roll No.   | Name        | GitHub username |
+|------------|-------------|------------------|
+| 24ESKCS130 | Gaurav Soni | gaurv-dev        |
 
-A full-stack Lost & Found management system built solo using the MERN stack (MongoDB, Express.js, React.js, Node.js). It replaces scattered, informal reporting — notice boards, WhatsApp groups, word of mouth — with one organized, searchable platform where lost and found items can actually find their way back to their owners.
+## 🔎 About
 
-**Status: 🚧 In Progress** — actively being built and updated.
+Lost & Found Portal is a full-stack web application designed to help campuses, offices, or organizations manage lost and found items in one centralized, searchable place — instead of relying on notice boards, WhatsApp groups, or word of mouth that rarely reach the right person.
 
----
+**Core Features**
 
-## 🧩 Problem Statement
+- 📢 **Centralized Reporting** — Users can report lost or found items with details like title, description, category, location, and date, all stored in one organized platform.
+- 🔍 **Searchable & Filterable Listings** — Browse and search active posts by keyword, category, location, or date — no more scrolling through irrelevant notices.
+- 🔐 **Secure User Authentication** — Every post is tied to a verified, logged-in user, with passwords securely hashed to keep accounts safe.
+- 🤝 **Direct Finder-Owner Connection** — Once a match is found, the finder and owner can connect directly through the platform, cutting out the middleman entirely.
 
-Most campuses handle lost items the same outdated way:
-- Physical notice boards nobody checks regularly
-- WhatsApp/Telegram groups where posts get buried in minutes
-- Word of mouth, which rarely reaches the right person
+## Tech stack
 
-The result — items sit unclaimed not because no one found them, but because the finder and owner never crossed paths. This portal solves that with a single, structured, always-searchable system.
+- Frontend: HTML, CSS
+- Backend: JavaScript
+- Database: NULL
 
----
+## Running locally
 
-## 🎯 Objectives 
+make install && make run
 
-- Centralize lost & found reporting into one platform
-- Make listings searchable and filterable (category, location, date)
-- Secure every post behind user authentication
-- Let the finder and owner connect directly, without a middleman
-- Apply real full-stack engineering — REST APIs, JWT auth, MongoDB schema design — to a genuinely useful idea
+## Live URL
 
----
+<Add once M5 is done. Until then, leave as is.>
 
-## 📌 Scope
+## Health endpoint
 
-| In Scope | Out of Scope |
-|---|---|
-| Single institution/campus use | Multi-location, public marketplace use |
-| Manual item posting & search | Automated image-based matching |
-| Web-based access | Native mobile app |
-
----
-
-## 👨‍💻 Developer
-
-Designed and built end-to-end, solo — frontend, backend, database, and deployment. No divided modules; every layer of the stack was implemented, tested, and connected independently.
-
----
-
-## ⚙️ Core Modules
-
-**1. Authentication**
-Signup/Login secured with JWT; passwords hashed using bcrypt before being stored — no plain-text credentials at any point.
-
-**2. Item Reporting**
-Users can report a lost item or a found item with title, description, category, location, date, and an optional photo (uploaded via Multer/Cloudinary).
-
-**3. Browse & Search**
-All active listings are visible with keyword search and filters for category, location, and date — built to reduce scrolling through irrelevant posts.
-
-**4. Dashboard**
-A personal space to track your own posts, mark items as resolved once returned, and view related notifications.
-
----
-
-## 🧰 Tech Stack
-| Layer | Technology | Reason for Choosing |
-|---|---|---|
-| Frontend | React.js, React Router, Axios | Reusable components, smooth client-side navigation |
-| Styling | Tailwind CSS | Fast, consistent UI without heavy custom CSS |
-| Backend | Node.js, Express.js | Lightweight, fast REST API layer |
-| Database | MongoDB (Mongoose) | Flexible schema — item fields vary by category |
-| Auth | JWT, bcrypt.js | Stateless sessions, secure password storage |
-| Uploads | Multer / Cloudinary | Handles item photo uploads |
-
----
-
-## 🏗️ System Design
-
-**Request Flow**
-```
-User → React Frontend → Express REST API → MongoDB
-                ↑                  ↓
-           JWT Middleware     Mongoose Models
-```
-
-**Data Model**
-
-| User | Item | Claim |
-|---|---|---|
-| name | title, category | item → ref Item |
-| email | type: lost/found | claimedBy → ref User |
-| password (hashed) | location, date | message, status |
-| | postedBy → ref User, status | |
-
-**Folder Structure**
-```
-lost-and-found-portal/
-├── client/src/   → components, pages, context, App.jsx
-├── server/       → models, routes, controllers, middleware, server.js
-└── README.md
-```
-
----
-
-## 💡 Challenges Faced & What I'm Learning
-
-- **Connecting frontend and backend cleanly** — working on structuring all API calls through a single Axios service layer instead of scattering fetch calls across components
-- **Protecting routes** — currently building custom JWT middleware to guard both API endpoints and frontend routes
-- **Handling image uploads** — started with local storage for images, now moving to Cloudinary for better reliability
-
-This project is still a work in progress, and it's helping me actually understand why the MERN stack pieces fit together, not just how to copy-paste each one.
-
----
-
-## 🚀 Future Improvements
-
-- Real-time chat between finder and owner
-- Email/SMS alerts when a matching item is posted
-- Map-based location tagging for lost/found spots
-- AI-based image matching to auto-suggest similar items
-
----
-
-## ⚡ How to Run
-
-```bash
-git clone https://github.com/gaurv-dev/Lost-Found-Portal.git
-cd Lost-Found-Portal
-
-cd server && npm install && npm run dev
-cd client && npm install && npm run dev
-```
-
-Add a `.env` file in `server/` with your MongoDB URI and JWT secret before running.
-
----
-
-## 📄 License
-
-This project was built solely for academic and learning purposes as part of a college submission.
-
----
-
-## ✅ Conclusion
-
-- Aims to solve a real, everyday campus problem — items not reaching their owners
-- Being built entirely solo, covering frontend, backend, database, and auth
-- Applying core full-stack concepts: REST APIs, JWT authentication, MongoDB schema design
-- Building hands-on understanding of how MERN pieces connect, not just theory
-- A growing foundation that can be extended into a larger, more feature-rich platform
+`GET /health` returns the running commit SHA. See `Makefile` and the milestone sheet for why this is required.
